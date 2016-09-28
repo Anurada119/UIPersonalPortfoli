@@ -1,0 +1,417 @@
+@import normalize
+@import variables
+@import icofont
+@import spinner
+@import media
+
+body
+    font-family: 'Fira Sans', sans-serif
+    background: url('../files/images/background_pattern.jpg')
+    background-size: cover
+    background-position: fixed
+
+#mobileOnly
+    display: none
+
+#spinn-wrapper
+    width: 100%
+    height: 100%
+    display: block
+    position: fixed
+    background: #000
+    z-index: 99999
+    opacity: 1
+    overflow: hidden
+
+.wrapper
+    position: relative
+    width: 100%
+    height: 100%
+
+    .header-container
+        height: 72px;
+        width: 100%;
+        position: relative
+        background: $white
+
+        img.logo
+            width: 136px
+            position: absolute
+            display: inline-block
+            padding: 17px
+            left: 50%
+            transform: translate(-50%)
+            user-select: none
+            -ms-user-select: none
+            -webkit-user-select: none
+            -moz-user-select: none
+        
+        i
+            font-size: 20px
+            display: inline-block
+            padding: 26px
+            opacity: 0.5
+            transition: opacity 0.4s ease-in-out
+            &:hover
+                opacity: 0.9
+                cursor: pointer
+
+        .user-icon
+            float: right
+
+        .menu-icon
+            float: left
+
+    .side-nav-container
+        width: 100%
+        height: 100%
+        position: fixed
+        top: 0
+        left: 0
+        pointer-events: none
+        z-index: 4
+        &::before
+            content: ''
+            background: $black
+            display: block
+            width: 100%
+            height: 100%
+            position: absolute
+            top: 0
+            left: 0
+            opacity: 0
+            transition: all 0.4s ease-in-out   
+    .side-nav-container-show
+        &::before
+            opacity: 0.9
+
+    .side-nav
+        width: 20%
+        min-width: 320px
+        height: 100%
+        position: relative
+        background: $white
+        box-shadow: 0 2px 20px 2px lighten(#000, 20%)
+        transform: translateX(-105%)
+        transition: all 0.4s ease-in-out
+        pointer-events: auto
+
+        .side-nav-headers
+            width: 100%
+            height: 72px
+            display: block
+            position: relative
+
+            i
+                padding: 26px
+                display: inline-block
+                font-size: 25px
+                transform: translateX(-50%)
+                left: 50%
+                position: absolute
+                opacity: 0.5
+                transition: all 0.5s ease-in-out
+                &:hover
+                    opacity: 0.9
+                    color: $primaryColor
+                    cursor: pointer
+
+    .side-nav-show
+        transform: translateX(0)
+
+        
+            
+.content-wrapper
+    width: 100%
+    height: auto
+    display: block
+    background: url('../files/images/background_pattern.jpg')
+    background-size: cover
+    position: relative
+    zoom: 1
+    &:before,
+    &:after
+        content: ''
+        display: table
+    &:after
+        clear: both
+    
+
+    .shots-wrappers
+        width: 25%
+        height: 225px
+        background-size: cover
+        float: left
+        display: block
+        box-sizing: border-box
+        filter: grayscale(100%)
+        -ms-filter: grayscale(100%)
+        -webkit-filter: grayscale(100%)
+        -moz-filter: grayscale(100%)
+        transition: all 0.8s ease-in-out
+        overflow: hidden
+        opacity: 0
+
+        &.is-visible
+            opacity: 1  
+
+        &:hover
+            filter: grayscale(0%)
+            -ms-filter: grayscale(0%)
+            -webkit-filter: grayscale(0%)
+            -moz-filter: grayscale(0%)
+            cursor: pointer
+
+        .project-1
+            width: 100%
+            height: 100%
+            display: block
+            background: url('../files/images/work/1.jpg')
+
+        .project-2
+            width: 100%
+            height: 100%
+            display: block
+            background: url('../files/images/work/2.jpg')
+
+        .project-3
+            width: 100%
+            height: 100%
+            display: block
+            background: url('../files/images/work/3.jpg')
+
+        .project-4
+            width: 100%
+            height: 100%
+            display: block
+            background: url('../files/images/work/4.jpg')
+
+        .project-5
+            width: 100%
+            height: 100%
+            display: block
+            background: url('../files/images/work/5.jpg')
+
+        .project-6
+            width: 100%
+            height: 100%
+            display: block
+            background: url('../files/images/work/6.jpg')
+
+        .project-7
+            width: 100%
+            height: 100%
+            display: block
+            background: url('../files/images/work/7.jpg')
+
+        .project-8
+            width: 100%
+            height: 100%
+            display: block
+            background: url('../files/images/work/8.jpg')
+
+
+        /** verticle animation **/
+        .animation-1,
+        .animation-3,
+        .animation-4,
+        .animation-7
+            background-size: cover 
+            background-position: 50% 0% 
+            transform: scale(1, 1)
+            transition: all 3s ease
+        
+            &:hover
+                transform: scale(2, 2)
+                z-index: -1
+        /** horizontal animation **/
+        .animation-2,
+        .animation-5,
+        .animation-6,
+        .animation-8
+            background-size: cover
+            background-position: 50% 0% 
+            transition: all 7s ease
+            &:hover
+                background-position: 50% 100%
+
+      
+    
+    .content-shot
+        filter: none
+        cursor: default !important
+        user-select: none
+        -ms-user-select: none
+        -webkit-user-select: none
+        -moz-user-select: none    
+
+    .name-shot
+        background: none
+        position: relative
+
+        .content-shot-wrapper
+            padding: 1.2rem
+            position: absolute
+            display: block
+            top: 50%
+            transform: translateY(-50%)
+            .links-wpar
+                left: 50%
+                transform: translate(-50%, -50%)
+                white-space: nowrap  
+
+            h1.my-name
+                font-size: 1.6rem
+                font-weight: 500
+                color: $primaryColor
+                text-transform: uppercase
+                padding: 0
+                margin: 0
+
+            span.designer
+                display: block
+                color: $white
+                font-size: 1.25rem
+                font-weight: 400
+                padding: 1rem 0 0 0
+
+            span.ui-designer
+                border-bottom: 4px solid $white
+                padding: 1rem 0
+                display: block
+                
+            span.centered
+                text-align: center
+
+            .quote-author
+                font-size: 0.9rem
+                color: #c4c4c4
+                padding: 0.5rem 0
+                display: block
+        
+        .content-shot-wrapper-links
+            padding: 1.2rem
+            position: absolute
+            display: block
+            left: 50%
+            top: 50%
+            transform: translate(-50%, -50%)
+            white-space: nowrap
+
+            span.designer
+                display: block
+                color: $white
+                font-size: 1.25rem
+                text-align: center
+                font-weight: 400
+                padding: 1rem 0
+
+            span.email
+                display: block
+
+                a
+                    color: $primaryColor
+                    text-decoration: none
+                    font-size: 1.3rem
+                    transition: color 0.4s ease-in-out
+                    &:hover
+                        color: darken($primaryColor, 10%)
+            
+            ul.links-of-me
+                display: block
+                list-style: none
+                color: $white
+                margin: 0
+                padding: 0
+
+                li 
+                    display: inline-block
+                    padding: 0.8rem
+                    margin: 0
+
+                    svg
+                        fill: #bfbfbf
+                        cursor: pointer
+                        &:hover
+                            #twt,
+                            #fbi,
+                            #bhn,
+                            #git,
+                            #lin
+                                transition: all 0.3s ease
+                                fill: $primaryColor
+
+@media only screen and (max-width: 768px) and (min-width: 320px) 
+
+    #mobileOnly
+                display: block
+
+    #desktopOnly
+        display: none
+
+    .side-nav
+        width: 100% !important
+        min-width: 100%
+
+    .content-wrapper
+
+        .shots-wrappers
+            width: 50% !important
+            height: 150px !important
+
+        .content-shot
+            filter: none
+            cursor: default !important
+            user-select: none
+            -ms-user-select: none
+            -webkit-user-select: none
+            -moz-user-select: none    
+
+        .name-shot
+            background: none
+            position: relative
+
+            .content-shot-wrapper
+                padding: 0.8rem
+
+                h1.my-name
+                    font-size: 1rem
+
+                span.designer
+                    font-size: 0.8rem
+
+                span.ui-designer
+                    border-bottom: 2px solid $white
+                    padding: 0.8rem 0
+                    
+                span.centered
+                    text-align: center
+
+                .quote-author
+                    font-size: 0.7rem
+                    padding: 0.5rem 0
+            
+            .content-shot-wrapper-links
+                padding: 0.8rem
+
+                span.designer
+                    font-size: 0.8rem
+
+                span.email
+
+                    a
+                        font-size: 0.85rem
+                
+                ul.links-of-me
+
+                    li 
+                        padding: 0.2rem
+
+@media only screen and (max-width: 1024px) and (min-width: 769px)
+    .content-wrapper
+
+        .shots-wrappers
+            width: 33.33%
+
+        #mobileOnly
+            display: none
