@@ -119,7 +119,63 @@ body
     .side-nav-show
         transform: translateX(0)
 
-        
+    .side-profile-container
+        width: 100%
+        height: 100%
+        position: fixed
+        top: 0
+        left: 0
+        pointer-events: none
+        z-index: 4
+        &::before
+            content: ''
+            background: $black
+            display: block
+            width: 100%
+            height: 100%
+            position: absolute
+            top: 0
+            left: 0
+            opacity: 0
+            transition: all 0.4s ease-in-out   
+    .side-profile-container-show
+        &::before
+            opacity: 0.9
+    
+    .side-profile
+        width: 100%
+        min-width: 320px
+        height: 100%
+        position: relative
+        background: $white
+        box-shadow: 0 2px 20px 2px lighten(#000, 20%)
+        transform: translateX(125%)
+        transition: all 0.4s ease-in-out
+        pointer-events: auto
+
+        .side-profile-headers
+            width: 100%
+            height: 72px
+            display: block
+            position: relative
+
+        i
+            padding: 26px
+            display: inline-block
+            font-size: 25px
+            transform: translateX(-50%)
+            left: 50%
+            position: absolute
+            opacity: 0.5
+            transition: all 0.5s ease-in-out
+            &:hover
+                opacity: 0.9
+                color: $primaryColor
+                cursor: pointer
+
+    .side-profile-show
+        transform: translateX(0)
+
             
 .content-wrapper
     width: 100%
@@ -170,8 +226,9 @@ body
 
         .project-2
             width: 100%
-            height: 100%
+            height: 300%
             display: block
+            overflow: visible
             background: url('../files/images/work/2.jpg')
 
         .project-3
@@ -188,14 +245,16 @@ body
 
         .project-5
             width: 100%
-            height: 100%
+            height: 200%
             display: block
+            overflow: visible
             background: url('../files/images/work/5.jpg')
 
         .project-6
             width: 100%
-            height: 100%
+            height: 200%
             display: block
+            overflow: visible
             background: url('../files/images/work/6.jpg')
 
         .project-7
@@ -204,9 +263,10 @@ body
             display: block
             background: url('../files/images/work/7.jpg')
 
-        .project-8
+        .project-8  
             width: 100%
-            height: 100%
+            height: 200%
+            overflow: visible
             display: block
             background: url('../files/images/work/8.jpg')
 
@@ -219,11 +279,19 @@ body
             background-size: cover 
             background-position: 50% 0% 
             transform: scale(1, 1)
-            transition: all 3s ease
-        
+            transition: all 3s ease-in-out
+            transform: rotate(0.04deg)
+            -moz-transform: rotate(0.04deg)
+            -o-transform: rotate(0.04deg)
+            -webkit-transform: rotate(0.04deg)
+            display: block;
             &:hover
                 transform: scale(2, 2)
+                -moz-transform: scale(2, 2)
+                -o-transform: scale(2, 2)
+                -webkit-transform: scale(2, 2)
                 z-index: -1
+            
         /** horizontal animation **/
         .animation-2,
         .animation-5,
@@ -231,12 +299,21 @@ body
         .animation-8
             background-size: cover
             background-position: 50% 0% 
+            transform: translate(0, 0)
             transition: all 7s ease
+            -webkit-transform: translateZ(0)
+            -moz-transform: translateZ(0)
+            -ms-transform: translateZ(0)
+            -o-transform: translateZ(0)
+            transform: translateZ(0)
+            transform: rotate(0.01deg)
+            -moz-transform: rotate(0.04deg)
+            -o-transform: rotate(0.04deg)
+            -webkit-transform: rotate(0.04deg)
+            display: block;
             &:hover
-                background-position: 50% 100%
-
-      
-    
+                transform: translate(0, -50%)
+            
     .content-shot
         filter: none
         cursor: default !important

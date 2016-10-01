@@ -24,5 +24,15 @@ $(document).ready(function() {
         }, 300 * i);
     })
 
+    $('.js-user-icon').on('click', function() {
+        $('.side-profile-container').addClass('side-profile-container-show');
+        $('.side-profile').addClass('side-profile-show');
+    });
+
+    $('.js-close-profile').on('click', function() {
+        $('.side-profile-container').removeClass('side-profile-container-show');
+        $('.side-profile').removeClass('side-profile-show');
+    })
+
 
 })
